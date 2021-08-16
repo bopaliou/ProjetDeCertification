@@ -54,6 +54,11 @@ class Document
      */
     private $images;
 
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $numero;
+
     public function __construct()
     {
         $this->images = new ArrayCollection();
@@ -162,6 +167,18 @@ class Document
                 $image->setDocument(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getNumero(): ?int
+    {
+        return $this->numero;
+    }
+
+    public function setNumero(?int $numero): self
+    {
+        $this->numero = $numero;
 
         return $this;
     }
