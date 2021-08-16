@@ -56,11 +56,6 @@ class Document
      */
     private $numero;
 
-    /**
-     * @ORM\Column(type="date", nullable=true)
-     */
-    private $dateExpiration;
-
     
 
     public function __construct()
@@ -182,12 +177,10 @@ class Document
         return $this->dateExpiration;
     }
 
-    public function setDateExpiration(?\DateTimeInterface $dateExpiration): self
+    public function setDateExpiration(\DateTimeInterface $dateExpiration): self
     {
         $this->dateExpiration = $dateExpiration;
 
         return $this;
     }
-
-    
 }

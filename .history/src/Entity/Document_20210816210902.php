@@ -29,7 +29,10 @@ class Document
      */
     private $dateEnregistrement;
 
-    
+    /**
+     * @ORM\Column(type="date",nullable=true)
+     */
+    private $dateExpiration;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
@@ -55,13 +58,6 @@ class Document
      * @ORM\Column(type="integer", nullable=true)
      */
     private $numero;
-
-    /**
-     * @ORM\Column(type="date", nullable=true)
-     */
-    private $dateExpiration;
-
-    
 
     public function __construct()
     {
@@ -176,18 +172,4 @@ class Document
 
         return $this;
     }
-
-    public function getDateExpiration(): ?\DateTimeInterface
-    {
-        return $this->dateExpiration;
-    }
-
-    public function setDateExpiration(?\DateTimeInterface $dateExpiration): self
-    {
-        $this->dateExpiration = $dateExpiration;
-
-        return $this;
-    }
-
-    
 }
