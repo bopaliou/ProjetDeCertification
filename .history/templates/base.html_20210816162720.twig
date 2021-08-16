@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <!--===============================================================================================-->	
+            <link rel="icon" type="image/png" href="public/LoginForm/images/icons/favicon.ico"/>
+        <!--===============================================================================================-->
+            <link rel="stylesheet" type="text/css" href="public/LoginForm/vendor/bootstrap/css/bootstrap.min.css">
+        <!--===============================================================================================-->
+            <link rel="stylesheet" type="text/css" href="public/LoginForm/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+        <!--===============================================================================================-->
+            <link rel="stylesheet" type="text/css" href="public/LoginForm/vendor/animate/animate.css">
+        <!--===============================================================================================-->	
+            <link rel="stylesheet" type="text/css" href="public/LoginForm/vendor/css-hamburgers/hamburgers.min.css">
+        <!--===============================================================================================-->
+            <link rel="stylesheet" type="text/css" href="public/LoginForm/vendor/select2/select2.min.css">
+        <!--===============================================================================================-->
+            <link rel="stylesheet" type="text/css" href="public/LoginForm/css/util.css">
+            <link rel="stylesheet" type="text/css" href="public/LoginForm/css/main.css">
+        <!--===============================================================================================-->
+    <!--
+
+    Host Cloud Template
+
+    https://templatemo.com/tm-541-host-cloud
+
+    -->
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {# Run `composer require symfony/webpack-encore-bundle`
+           and uncomment the following Encore helpers to start using Symfony UX #}
+        {% block stylesheets %}
+            {#{{ encore_entry_link_tags('app') }}#}
+        {% endblock %}
+
+        {% block javascripts %}
+            {#{{ encore_entry_script_tags('app') }}#}
+        {% endblock %}
+    </head>
+    <body>
+    <!--===============================================================================================-->	
+        <script src="publicvendor/jquery/jquery-3.2.1.min.js"></script>
+    <!--===============================================================================================-->
+        <script src="vendor/bootstrap/js/popper.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!--===============================================================================================-->
+        <script src="vendor/select2/select2.min.js"></script>
+    <!--===============================================================================================-->
+        <script src="vendor/tilt/tilt.jquery.min.js"></script>
+        <script >
+            $('.js-tilt').tilt({
+                scale: 1.1
+            })
+        </script>
+    <!--===============================================================================================-->
+        <script src="js/main.js"></script>
+
+
+        {% block body %}{% endblock %}
+    </body>
+</html>
