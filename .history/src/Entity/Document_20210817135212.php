@@ -189,8 +189,5 @@ class Document
         return $this;
     }
 
-    public function __toString()
-    {
-        return $this->type."(".$this->user_document.")";
-    }
+    pub
 }

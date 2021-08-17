@@ -191,6 +191,6 @@ class Document
 
     public function __toString()
     {
-        return $this->type."(".$this->user_document.")";
+        return $this-
     }
 }
