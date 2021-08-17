@@ -36,7 +36,7 @@ class Image
     private $taille;
 
     /**
-     * @ORM\Column(type="text", nullable=true)
+     * @ORM\Column(type="text", nullable=)
      */
     private $description;
 

@@ -31,7 +31,7 @@ class Image
     private $imageFile;
 
     /**
-     * @ORM\Column(type="decimal", precision=10, scale=0, nullable=false)
+     * @ORM\Column(type="decimal", precision=10, scale=0, nullable=true)
      */
     private $taille;
 
