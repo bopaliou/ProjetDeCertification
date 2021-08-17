@@ -57,7 +57,7 @@ class Document
     private $numero;
 
     /**
-     * @ORM\Column(type="date", nullable=false)
+     * @ORM\Column(type="date", nullable=true)
      */
     private $dateExpiration;
 

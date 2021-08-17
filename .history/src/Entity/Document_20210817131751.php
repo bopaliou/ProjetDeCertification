@@ -32,7 +32,7 @@ class Document
     
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=false)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $adresse;
 
@@ -52,12 +52,12 @@ class Document
     private $images;
 
     /**
-     * @ORM\Column(type="integer", nullable=false)
+     * @ORM\Column(type="integer", nullable=true)
      */
     private $numero;
 
     /**
-     * @ORM\Column(type="date", nullable=false)
+     * @ORM\Column(type="date", nullable=true)
      */
     private $dateExpiration;
 

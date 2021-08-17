@@ -52,12 +52,12 @@ class Document
     private $images;
 
     /**
-     * @ORM\Column(type="integer", nullable=false)
+     * @ORM\Column(type="integer", nullable=true)
      */
     private $numero;
 
     /**
-     * @ORM\Column(type="date", nullable=false)
+     * @ORM\Column(type="date", nullable=true)
      */
     private $dateExpiration;
 
