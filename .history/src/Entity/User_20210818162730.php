@@ -84,9 +84,10 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface,JWTUserI
     private $adresse;
 
     /**
-
+<<<<<<< HEAD
      * @ORM\Column(type="string", length=255, nullable=true)
      * @Assert\NotBlank(message="Le numéro de téléphone ne peut pas etre vide")
+
      */
     #[Assert\NotBlank(message:"Le numéro de téléphone' ne peut pas etre vide")]
     private $telephone;

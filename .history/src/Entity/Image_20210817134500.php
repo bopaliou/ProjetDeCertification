@@ -2,16 +2,14 @@
 
 namespace App\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
 use App\Repository\ImageRepository;
-use ApiPlatform\Core\Annotation\ApiResource;
-use Symfony\Component\HttpFoundation\File\File;
+use Doctrine\ORM\Mapping as ORM;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Symfony\Component\HttpFoundation\File\File;
 /**
  * @ORM\Entity(repositoryClass=ImageRepository::class)
  * @Vich\Uploadable
  */
-#[ApiResource]
 class Image
 {
     /**
@@ -33,7 +31,7 @@ class Image
     private $imageFile;
 
     /**
-     * @ORM\Column(type="decimal", precision=10, scale=0, nullable=false)
+     * @ORM\Column(type="decimal", precision=10, scale=0, nullable=true)
      */
     private $taille;
 

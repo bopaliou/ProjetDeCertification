@@ -2,24 +2,20 @@
 
 namespace App\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
 use App\Repository\UserRepository;
-use Doctrine\Common\Collections\Collection;
-use ApiPlatform\Core\Annotation\ApiResource;
 use Doctrine\Common\Collections\ArrayCollection;
-use Symfony\Component\Validator\Constraints as Assert;
-use Symfony\Component\Security\Core\User\UserInterface;
+use Doctrine\Common\Collections\Collection;
+use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
-use Lexik\Bundle\JWTAuthenticationBundle\Security\User\JWTUserInterface;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
  * @ORM\Table(name="`user`")
  * @UniqueEntity(fields={"email"}, message="There is already an account with this email")
  */
-#[ApiResource]
-class User implements UserInterface, PasswordAuthenticatedUserInterface,JWTUserInterface
+class User implements UserInterface, PasswordAuthenticatedUserInterface
 {
     /**
      * @ORM\Id
@@ -30,96 +26,58 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface,JWTUserI
 
     /**
      * @ORM\Column(type="string", length=180, unique=true)
-     * @Assert\NotBlank(message="Le '{{value}}' ne peut pas etre vide")
-     *  @Assert\Email(message="L'adresse '{{value}}' n'est pas valide'")
      */
-    
-    #[Assert\NotBlank(message:"L'adresse email ne peut pas etre vide"),
-    Assert\Email(message:"L'adresse email n'est pas valide'")]
     private $email;
 
     /**
      * @ORM\Column(type="json")
      */
-    
     private $roles = [];
 
     /**
      * @var string The hashed password
      * @ORM\Column(type="string")
-     * @Assert\Length(
-     *   min=6,
-     *   max=255,
-     *   minMessage="Votre mot de passe doit contenir au minimum 6 caractères",
-     *   maxMessage="Votre mot de passe doit contenir au maximum 255 caractères"
-     *)
      */
-    #[Assert\Length(
-        min:6,
-        max:255,
-        minMessage:"Votre mot de passe doit contenir au minimum 6 caractères",
-        maxMessage:"Votre mot de passe doit contenir au maximum 255 caractères"
-        )]
     private $password;
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Assert\NotBlank(message="Le nom ne peut pas etre vide")
      */
-    #[Assert\NotBlank(message:"Le nom ne peut pas etre vide")]
     private $nom;
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Assert\NotBlank(message="Le prenom ne peut pas etre vide")
      */
-    #[Assert\NotBlank(message:"Le prenom ne peut pas etre vide")]
     private $prenom;
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Assert\NotBlank(message="L'adresse' ne peut pas etre vide")
      */
-    #[Assert\NotBlank(message:"L'adresse' ne peut pas etre vide")]
     private $adresse;
 
     /**
-
-     * @ORM\Column(type="string", length=255, nullable=true)
-     * @Assert\NotBlank(message="Le numéro de téléphone ne peut pas etre vide")
+     * @ORM\Column(type="string", length=255, nullable=false)
      */
-    #[Assert\NotBlank(message:"Le numéro de téléphone' ne peut pas etre vide")]
     private $telephone;
 
     /**
      * @ORM\Column(type="date")
-     * @Assert\NotBlank(message="La date de naissance ne peut pas etre vide")
      */
-    #[Assert\NotNull(message:"La date de naissance ne peut pas etre vide")]
     private $dateNaissance;
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Assert\NotBlank(message="Le lieu de naissance ne peut pas etre vide")
      */
-    #[Assert\NotBlank(message:"Le lieu de naissance ne peut pas etre vide")]
     private $lieuNaissance;
 
     /**
      * @ORM\OneToMany(targetEntity=Document::class, mappedBy="user_document")
      */
-
     private $documents;
 
     public function __construct()
     {
         $this->documents = new ArrayCollection();
-        
-        
-    }
-    public static function createFromPayload($username, array $payload)
-    {
-        dd($username,$payload);
     }
 
     public function getId(): ?int
