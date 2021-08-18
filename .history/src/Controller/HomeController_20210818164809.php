@@ -14,7 +14,7 @@ class HomeController extends AbstractController
     {
         $images=$imageRepository->findAll();
         return $this->render('home/index.html.twig', [
-            'images' => $images,
+            'images' => 'HomeController',
         ]);
     }
 }

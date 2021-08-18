@@ -105,29 +105,17 @@ https://templatemo.com/tm-541-host-cloud
         </div>
       </div>
     </div>
-    <div class="container mt-4 ">
+    <div class="container" style="{margin-top:10px;}">
       <div class="row">
         
                 {% for image in images %}
                 <div class="col-md-4">
-                    <div class="card bg-light"  style="margin-top:20px;">
-                    
-                        {% if image.document.etat==true %}
-                       <div class="card-title">
-                       <br>
-                            <center><p  class="text-success">Trouvé</p></center>
-                        </div>
-                        {% else %}
-                          <div class="card-title" >
-                          <br>
-                              <center><p class="text-danger"> Perdu</p></center>
-                          </div>
-                        {% endif %}
+                    <div class="card">
                         <div class="card-body">
                           <img src="{{ vich_uploader_asset(image, 'imageFile') }}">
                         </div>
                         <div class="card-footer">
-                            <center><a href="#" role="button" class="btn btn-outline-success">réclamer</a></center>
+                            <center><a href="#" role="butti">réclamer</a></center>
                         </div>
                     </div>
                   </div>

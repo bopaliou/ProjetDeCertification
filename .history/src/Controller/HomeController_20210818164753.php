@@ -12,9 +12,9 @@ class HomeController extends AbstractController
     #[Route('/', name: 'home')]
     public function index(ImageRepository $imageRepository): Response
     {
-        $images=$imageRepository->findAll();
+        $images=$imageRepository->find
         return $this->render('home/index.html.twig', [
-            'images' => $images,
+            'controller_name' => 'HomeController',
         ]);
     }
 }
