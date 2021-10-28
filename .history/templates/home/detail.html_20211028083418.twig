@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-title">
+               
+                </div>
+                <div class="card-body">
+                     <img src="{{ vich_uploader_asset(image, 'imageFile') }}" class="rounded mx-auto d-block" width=320 height=400>
+                </div>
+            </div>
+
+        </div>
+         <div class="col-md-4">
+             <div class="card">
+                <div class="card-title">
+                    <h2 style="text-align:center">Informations personnelles</h2>
+                </div>
+                <div class="card-body">
+                     <h3></h3>
+                </div>
+            </div>
+        </div>
+         <div class="col-md-4">
+        
+        </div>
+    </div>
+</div>
+
+{% endblock %}

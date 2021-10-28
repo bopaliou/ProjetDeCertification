@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-title">
+               
+                </div>
+                <div class="card-body">
+                     <img src="{{ vich_uploader_asset(image, 'imageFile') }}" class="rounded mx-auto d-block" width=320 height=400>
+                </div>
+            </div>
+
+        </div>
+         <div class="col-md-4">
+             <p>Pour pouvoir récupérer votre {{image.document.type}} veiller se rendre <br> à la gendarmerie
+             de {{image.document.adresse}} et il faut se munir de votre:<br>
+             * certificat de perte de 
+             </p>
+        </div>
+         <div class="col-md-4">
+        
+        </div>
+    </div>
+</div>
+
+{% endblock %}
